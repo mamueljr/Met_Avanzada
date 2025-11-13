@@ -87,6 +87,33 @@ body {
     50% { transform: translateY(-20px); }
 }
 
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.85; }
+}
+
 /* Removed: infinite bounce animation on hero image */
 
 .hero .subtitle {
@@ -195,6 +222,7 @@ section:nth-child(odd) {
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    animation: fadeInUp 0.6s ease-out;
 }
 
 .card:hover {
@@ -202,6 +230,40 @@ section:nth-child(odd) {
     box-shadow: 0 15px 40px rgba(0,0,0,0.2);
 }
 
+/* Image Placeholder */
+.image-placeholder {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(102,126,234,0.2);
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.image-placeholder.light-blue {
+    background: linear-gradient(135deg, #667eea 0%, #5a7dd8 100%);
+}
+
+.image-placeholder.purple {
+    background: linear-gradient(135deg, #764ba2 0%, #5a3a82 100%);
+}
+
+.image-placeholder.teal {
+    background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+}
+
+.image-placeholder.orange {
+    background: linear-gradient(135deg, #fd7e14 0%, #e66a00 100%);
+}
+
+/* Big number cards in characteristics section */
 .card h3 {
     color: #667eea;
     font-size: 1.5em;
@@ -209,6 +271,13 @@ section:nth-child(odd) {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.card:has(h3:only-child) h3 {
+    font-size: 3.5em;
+    color: #667eea;
+    margin-bottom: 20px;
+    animation: pulse 3s infinite;
 }
 
 .card p {
@@ -238,7 +307,6 @@ section:nth-child(odd) {
     font-weight: bold;
 }
 
-/* Pillar Cards */
 .pillar-card {
     background: #ffffff;
     color: #333;
@@ -249,6 +317,7 @@ section:nth-child(odd) {
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
+    animation: slideInLeft 0.6s ease-out;
 }
 
 .pillar-card:hover {
@@ -379,6 +448,7 @@ section:nth-child(odd) {
     padding: 25px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
+    animation: fadeInUp 0.6s ease-out;
 }
 
 .specialization-card:hover {
@@ -410,6 +480,7 @@ section:nth-child(odd) {
     margin-bottom: 25px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
+    animation: slideInRight 0.6s ease-out;
 }
 
 .competency-item:hover {
@@ -522,6 +593,7 @@ section:nth-child(odd) {
     text-align: center;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
+    animation: fadeInUp 0.6s ease-out;
 }
 
 .impact-card:hover {
@@ -552,6 +624,8 @@ section:nth-child(odd) {
     padding: 80px 20px;
     border-radius: 30px;
     margin: 40px 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 30px rgba(102,126,234,0.2);
 }
 
 .cta-section h2 {
@@ -559,13 +633,16 @@ section:nth-child(odd) {
     margin-bottom: 20px;
 }
 
+.cta-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(102,126,234,0.3);
+}
+
 .cta-section p {
     font-size: 1.3em;
     margin-bottom: 30px;
     opacity: 0.95;
 }
-
-/* --- NUEVO HEADER RESPONSIVO --- */
 .main-header {
     position: fixed;
     top: 0;
