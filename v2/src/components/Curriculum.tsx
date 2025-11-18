@@ -29,22 +29,23 @@ const Curriculum: React.FC = () => {
         </div>
 
         <div className="relative">
-            {/* Vertical Line */}
-            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-white/20 transform md:-translate-x-1/2 rounded-full"></div>
+          {/* Vertical Line: left on small screens, centered on md+ */}
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-white/20 transform md:-translate-x-1/2 rounded-full"></div>
 
             <div className="space-y-12">
                 {SEMESTERS.map((sem, index) => (
-                    <div 
-                        key={sem.id} 
-                        className={`relative flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : ''} fade-in-up`}
-                        style={{ animationDelay: `${0.1 * index + 0.2}s` }}
-                    >
+                  <div 
+                    key={sem.id} 
+                    className={`flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : ''} fade-in-up`}
+                    style={{ animationDelay: `${0.1 * index + 0.2}s` }}
+                  >
                         
                         {/* Spacer for opposite side */}
                         <div className="hidden md:block w-1/2"></div>
                         
                         {/* Dot */}
-                        <div className="absolute left-4 md:left-1/2 w-8 h-8 bg-uach-gold rounded-full border-4 border-uach-purple flex items-center justify-center z-10 transform -translate-x-1/2 md:-translate-x-1/2 shadow-[0_0_0_4px_rgba(255,255,255,0.2)] halo-gold">
+                        {/* Dot: aligned left on small screens, centered on md+ */}
+                        <div className="absolute left-4 md:left-1/2 w-8 h-8 bg-uach-gold rounded-full border-4 border-uach-purple flex items-center justify-center z-10 transform md:-translate-x-1/2 shadow-[0_0_0_4px_rgba(255,255,255,0.2)] halo-gold">
                             <span className="text-uach-purple text-xs font-bold">{sem.id}</span>
                         </div>
 
