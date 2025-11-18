@@ -1,0 +1,11 @@
+/* Archivo de estilos globales mínimos. */
+html, body, #root {
+  height: 100%;
+}
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Puedes añadir estilos globales adicionales aquí. */
