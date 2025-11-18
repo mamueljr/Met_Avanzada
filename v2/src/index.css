@@ -1,0 +1,131 @@
+/* Archivo de estilos globales mínimos. */
+html, body, #root {
+  height: 100%;
+}
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Puedes añadir estilos globales adicionales aquí. */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes floatSlow {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.9s ease forwards;
+}
+
+.float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.hover-lift {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+}
+
+.glow-border {
+  position: relative;
+}
+
+.glow-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(186, 143, 23, 0.45), rgba(111, 66, 193, 0.35));
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glow-border:hover::before,
+.glow-border:focus-within::before {
+  opacity: 1;
+}
+
+.halo-gold {
+  position: relative;
+  isolation: isolate;
+  border-color: rgba(234, 179, 8, 0.35) !important;
+  box-shadow: 0 0 12px rgba(234, 179, 8, 0.28), 0 0 24px rgba(234, 179, 8, 0.18);
+}
+
+.halo-gold::after {
+  content: '';
+  position: absolute;
+  inset: var(--halo-inset, -4px);
+  border-radius: inherit;
+  background: radial-gradient(circle, rgba(255, 215, 96, 0.35) 0%, rgba(255, 215, 96, 0) 65%);
+  filter: blur(6px);
+  opacity: 0.9;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.halo-gold-tight {
+  position: relative;
+  isolation: isolate;
+  box-shadow: 0 0 18px rgba(234, 179, 8, 0.4), 0 0 32px rgba(234, 179, 8, 0.18);
+}
+
+.halo-gold-tight::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  background: radial-gradient(circle, rgba(255, 215, 96, 0.45) 0%, rgba(255, 215, 96, 0) 70%);
+  filter: blur(10px);
+  opacity: 0.95;
+  z-index: -1;
+  pointer-events: none;
+}
