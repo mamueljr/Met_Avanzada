@@ -36,21 +36,19 @@ const Curriculum: React.FC = () => {
                 {SEMESTERS.map((sem, index) => (
                   <div 
                     key={sem.id} 
-                    className={`flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : ''} fade-in-up`}
+                    className={`relative flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : ''} fade-in-up`}
                     style={{ animationDelay: `${0.1 * index + 0.2}s` }}
                   >
-                        
-                        {/* Spacer for opposite side */}
-                        <div className="hidden md:block w-1/2"></div>
-                        
-                        {/* Dot */}
-                        {/* Dot: aligned left on small screens, centered on md+ */}
-                        <div className="absolute left-4 md:left-1/2 w-8 h-8 bg-uach-gold rounded-full border-4 border-uach-purple flex items-center justify-center z-10 transform md:-translate-x-1/2 shadow-[0_0_0_4px_rgba(255,255,255,0.2)] halo-gold">
+                        {/* Dot - positioned on the central line, relative to each card container */}
+                        <div className="absolute left-4 md:left-1/2 top-1/2 w-8 h-8 bg-uach-gold rounded-full border-4 border-uach-purple flex items-center justify-center z-50 transform md:-translate-x-1/2 -translate-y-1/2 shadow-[0_0_0_4px_rgba(255,255,255,0.2)] halo-gold pointer-events-none">
                             <span className="text-uach-purple text-xs font-bold">{sem.id}</span>
                         </div>
 
+                        {/* Spacer for opposite side */}
+                        <div className="hidden md:block w-1/2"></div>
+
                         {/* Content Card */}
-                        <div className="w-full md:w-1/2 pl-12 md:pl-0 md:px-8">
+                        <div className="w-full md:w-1/2 pl-12 md:pl-0 md:px-8 relative z-0">
                             <div className="bg-white/10 backdrop-blur-md border border-white/10 p-6 rounded-xl hover:bg-white/15 transition-colors hover-lift glow-border">
                                 <div className="flex items-center gap-3 mb-4">
                                     <Calendar className="text-uach-gold" size={20}/>
