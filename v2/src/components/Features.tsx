@@ -111,7 +111,7 @@ const Features: React.FC = () => {
                         duration={1600}
                         delay={idx * 200}
                         animate={animateCounters}
-                        className="block text-5xl font-bold text-indigo-100 mb-2"
+                        className="block text-5xl font-bold text-uach-gold mb-2"
                       />
                       <p className="font-medium">{item.label}</p>
                       <p className="text-xs text-gray-500 mt-2">{item.subtext}</p>
