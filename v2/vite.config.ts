@@ -2,12 +2,16 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
-  // Ajusta `base` solo si despliegas en un subdirectorio. Para desarrollo local usa '/'.
-  base: '/',
-  build: {
-    outDir: 'dist',
-    assetsDir: 'assets',
-  }
+export default defineConfig(({ command }) => {
+  const isProd = command === 'build';
+  return {
+    plugins: [react()],
+    // En desarrollo usamos '/' para que sea fácil.
+    // En producción (build) usamos la subcarpeta donde se va a alojar.
+    base: isProd ? '/met_avanzada/v2/' : '/',
+    build: {
+      outDir: 'dist',
+      assetsDir: 'assets',
+    }
+  };
 });
