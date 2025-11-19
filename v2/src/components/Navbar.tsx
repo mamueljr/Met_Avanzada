@@ -56,29 +56,60 @@ const Navbar: React.FC = () => {
               onClick={() => setIsOpen(!isOpen)}
               className={`p-2 rounded-md ${scrolled ? 'text-gray-800' : 'text-white'}`}
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {/* Toggle Button: We keep it simple here, relying on the overlay to close or the menu's internal close button if we add one, 
+                  but for now let's just toggle. Actually, let's make it just Open if closed. 
+                  If open, the menu itself will have a close button or clicking outside closes it. 
+                  Let's keep the toggle logic for the main navbar icon. */
+              }
+              <Menu size={24} />
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200 shadow-lg">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {NAV_ITEMS.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
+      {/* Mobile Menu Overlay & Drawer */}
+      <div className={`fixed inset-0 z-40 md:hidden transition-opacity duration-300 ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+        {/* Backdrop */}
+        <div 
+          className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+          onClick={() => setIsOpen(false)}
+        />
+        
+        {/* Drawer */}
+        <div className={`absolute top-0 right-0 h-full w-[280px] bg-white shadow-2xl transform transition-transform duration-300 ease-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+          <div className="p-6 flex flex-col h-full">
+            <div className="flex justify-between items-center mb-8">
+              <span className="text-lg font-bold text-uach-purple">Menú</span>
+              <button 
                 onClick={() => setIsOpen(false)}
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-uach-purple hover:bg-gray-50"
+                className="p-2 rounded-full hover:bg-gray-100 text-gray-500 transition-colors"
               >
-                {item.label}
-              </a>
-            ))}
+                <X size={24} />
+              </button>
+            </div>
+            
+            <div className="space-y-2">
+              {NAV_ITEMS.map((item, idx) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  className="block px-4 py-3 rounded-xl text-base font-medium text-gray-700 hover:text-uach-purple hover:bg-uach-purple/5 transition-all duration-200 transform hover:translate-x-2"
+                  style={{ transitionDelay: `${idx * 50}ms` }}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+
+            <div className="mt-auto pt-8 border-t border-gray-100">
+               <p className="text-xs text-center text-gray-400">
+                 © 2025 Facultad de Ciencias de la Cultura Física
+               </p>
+            </div>
           </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 };

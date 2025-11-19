@@ -48,15 +48,7 @@ body {
   }
 }
 
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 0.8s ease forwards;
-}
-
-.fade-in-up {
-  opacity: 0;
-  animation: fadeInUp 0.9s ease forwards;
-}
+/* Old animations removed in favor of RevealOnScroll component */
 
 .float-slow {
   animation: floatSlow 6s ease-in-out infinite;
@@ -71,33 +63,7 @@ body {
   box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
 }
 
-.glow-border {
-  position: relative;
-}
-
-.glow-border::before {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(
-    135deg,
-    rgba(186, 143, 23, 0.45),
-    rgba(111, 66, 193, 0.35)
-  );
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.glow-border:hover::before,
-.glow-border:focus-within::before {
-  opacity: 1;
-}
+/* Old glow-border removed */
 
 .halo-gold {
   position: relative;
@@ -142,4 +108,59 @@ body {
   opacity: 0.95;
   z-index: -1;
   pointer-events: none;
+}
+
+/* Button Shine Effect */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: left 0.75s;
+}
+
+.btn-shine:hover::after {
+  left: 200%;
+  transition: left 0.75s ease-in-out;
+}
+
+/* Enhanced Glow Border */
+.glow-border::before {
+  content: "";
+  position: absolute;
+  inset: -2px; /* Thicker border */
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(
+    135deg,
+    #D9AA32, /* uach-gold */
+    #6F42C1, /* uach-purple */
+    #D9AA32
+  );
+  background-size: 200% 200%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease, background-position 0.4s ease;
+}
+
+.glow-border:hover::before {
+  opacity: 1;
+  background-position: 100% 100%; /* Animate gradient on hover */
 }
