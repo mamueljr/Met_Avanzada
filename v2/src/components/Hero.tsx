@@ -1,4 +1,5 @@
 import React from 'react';
+import { HERO_CONTENT } from '../constants';
 import heroBg from '../assets/hero-bg.jpg';
 import logoUach from '../assets/logo-uach.png';
 import logoFccf from '../assets/logo-fccf.png';
@@ -27,18 +28,18 @@ const Hero: React.FC = () => {
         </div>
         
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 leading-tight fade-in-up" style={{ animationDelay: '0.2s' }}>
-          Doctorado en <br/>
-          <span className="text-uach-gold">Metodología Avanzada</span> <br/>
-          para la Investigación
+          {HERO_CONTENT.title.prefix} <br/>
+          <span className="text-uach-gold">{HERO_CONTENT.title.highlight}</span> <br/>
+          {HERO_CONTENT.title.suffix}
         </h1>
         
         <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-8 font-light fade-in-up" style={{ animationDelay: '0.3s' }}>
-          en Ciencias Sociales, Humanidades, Educación y Salud
+          {HERO_CONTENT.subtitle}
         </p>
         
         <div className="flex flex-col gap-2 text-sm md:text-base tracking-wide uppercase opacity-80 fade-in-up" style={{ animationDelay: '0.4s' }}>
-          <p>Universidad Autónoma de Chihuahua</p>
-          <p>Facultad de Ciencias de la Cultura Física</p>
+          <p>{HERO_CONTENT.university}</p>
+          <p>{HERO_CONTENT.faculty}</p>
         </div>
 
         <div className="mt-12 fade-in-up" style={{ animationDelay: '0.5s' }}>
@@ -46,7 +47,7 @@ const Hero: React.FC = () => {
             href="#que-es" 
             className="inline-block bg-uach-gold text-uach-purple font-bold py-4 px-10 rounded-full hover:bg-white hover:text-uach-purple transition-all duration-300 shadow-lg transform hover:-translate-y-1 ring-2 ring-transparent hover:ring-uach-gold/70 focus-visible:ring-uach-gold/80"
           >
-            Conocer el Programa
+            {HERO_CONTENT.cta}
           </a>
         </div>
       </div>

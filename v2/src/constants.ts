@@ -188,3 +188,15 @@ export const GRADUATION_CAPABILITIES = [
   'Asesorar y formar a nuevas generaciones de investigadores',
   'Influir en la toma de decisiones basadas en evidencia en tu campo profesional'
 ];
+
+export const HERO_CONTENT = {
+  title: {
+    prefix: 'Doctorado en',
+    highlight: 'Metodología Avanzada',
+    suffix: 'para la Investigación'
+  },
+  subtitle: 'en Ciencias Sociales, Humanidades, Educación y Salud',
+  university: 'Universidad Autónoma de Chihuahua',
+  faculty: 'Facultad de Ciencias de la Cultura Física',
+  cta: 'Conocer el Programa'
+};
