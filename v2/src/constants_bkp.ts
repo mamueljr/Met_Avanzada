@@ -14,8 +14,8 @@ export const PILLARS: Pillar[] = [
   {
     id: 1,
     title: 'Seminarios de Formación Específica y Seminarios de Tesis',
-    description: 'Acompañamiento individualizado para tu proyecto doctoral.',
-    whatIsIt: 'Los Seminarios de Formación Específica son espacios donde profundizas en el conocimiento teórico, epistemológico y metodológico de tu área. En los Seminarios de Tesis se te guía desde la formulación de tus preguntas de investigación hasta la publicación de tus resultados.',
+    description: 'Acompañamiento estructurado desde la formulación de preguntas hasta la publicación.',
+    whatIsIt: 'Espacios donde profundizas en el conocimiento teórico, epistemológico y metodológico de tu área. Los Seminarios de Tesis te guían en tu proyecto doctoral.',
     benefits: [
       'Identificarás problemáticas relevantes y lagunas de conocimiento en tu campo',
       'Aprenderás a formular preguntas de investigación pertinentes y bien delimitadas',
@@ -33,7 +33,7 @@ export const PILLARS: Pillar[] = [
       'Aprenderás haciendo: cada curso es 100% práctico',
       'Podrás aplicar cada técnica directamente en tu investigación doctoral',
       'Desarrollarás habilidades en diseño de instrumentos, análisis estadísticos sofisticados y redacción científica',
-      'Estarás preparado para publicar diferentes tipos de artículos: empíricos, revisiones sistemáticas y meta-análisis'
+      'Estarás preparado para publicar diferentes tipos de artículos'
     ]
   },
   {
@@ -44,9 +44,9 @@ export const PILLARS: Pillar[] = [
     benefits: [
       'Atención personalizada para refinar tus preguntas de investigación',
       'Asesoría específica en el diseño metodológico más apropiado',
-      'Resolución de problemas metodológicos durante la ejecución de tu investigación',
+      'Resolución de problemas metodológicos durante la ejecución',
       'Retroalimentación experta en la interpretación de resultados',
-      'Desarrollo de pensamiento crítico y autocrítico sobre tu propio trabajo',
+      'Desarrollo de pensamiento crítico y autocrítico',
       'Mentoría para navegar el proceso de publicación científica'
     ]
   },
@@ -60,16 +60,14 @@ export const PILLARS: Pillar[] = [
       'Recibirás retroalimentación constructiva de múltiples expertos',
       'Te expondrás a investigaciones diversas que enriquecerán tu perspectiva',
       'Aprenderás a defender tus decisiones metodológicas ante audiencias críticas',
-      'Te prepararás para presentar en congresos internacionales',
-      'Crearás redes de colaboración con otros doctorandos',
-      'Desarrollarás resiliencia ante la evaluación por pares'
+      'Te prepararás para presentar en congresos internacionales'
     ]
   },
   {
     id: 5,
     title: 'Enfoque Interdisciplinario',
     description: 'Integración de estudiantes de múltiples disciplinas.',
-    whatIsIt: 'Un espacio formativo compartido por profesionales de educación, psicología, salud, ciencias de la cultura física, sociología, etc.',
+    whatIsIt: 'Un espacio formativo compartido por profesionales de educación, psicología, salud, ciencias de la cultura física y sociología.',
     benefits: [
       'Aprenderás de las mejores prácticas metodológicas de diferentes campos',
       'Desarrollarás capacidad para diseñar investigaciones que trasciendan fronteras disciplinares',
@@ -150,15 +148,15 @@ export const SEMESTERS: Semester[] = [
 ];
 
 export const SPECIALIZATIONS: Specialization[] = [
-  { id: 1, title: 'Ciclo Vital y Calidad de Vida', description: 'Estudia el desarrollo humano desde la infancia hasta la vejez, y cómo promover calidad de vida en diferentes etapas.' },
-  { id: 2, title: 'Salud, Ejercicio y Comportamiento', description: 'Investiga la relación entre factores psicológicos, actividad física y comportamientos saludables.' },
-  { id: 3, title: 'Teoría de la Autodeterminación y Motivación en Contextos Aplicados', description: 'Profundiza en los mecanismos motivacionales que impulsan el comportamiento humano en educación, deporte y salud.' },
-  { id: 4, title: 'Desarrollo del Autoconcepto, Habilidades Socioemocionales y Afrontamiento', description: 'Estudia cómo las personas construyen su identidad y desarrollan competencias para enfrentar desafíos.' },
-  { id: 5, title: 'Psicología y Entornos de Aprendizaje', description: 'Analiza los procesos de enseñanza-aprendizaje y cómo optimizar contextos educativos.' },
-  { id: 6, title: 'Recursos Didácticos, Innovación y Tecnología', description: 'Investigar el diseño, la implementación y la eficacia de metodologías y herramientas innovadoras para la enseñanza.' },
-  { id: 7, title: 'Bienestar y Comportamiento Saludable en Contextos de Educación Física Escolar', description: 'Explora cómo la educación física escolar puede promover bienestar integral en niños y adolescentes.' },
-  { id: 8, title: 'Psico Sociología de la Adherencia a la Actividad Física', description: 'Estudia los factores psicológicos y sociales que influyen en la práctica sostenida de actividad física.' },
-  { id: 9, title: 'Ejercicio Físico como Herramienta de Inclusión y Salud', description: 'Investiga cómo el ejercicio puede promover inclusión social y mejorar la salud en poblaciones diversas.' }
+  { id: 1, title: 'Psicología del Ciclo Vital y Calidad de Vida', description: 'Estudia el desarrollo humano desde la infancia hasta la vejez, y cómo promover calidad de vida en diferentes etapas.' },
+  { id: 2, title: 'Psicología de la Salud, Ejercicio y Comportamiento', description: 'Investiga la relación entre factores psicológicos, actividad física y comportamientos saludables.' },
+  { id: 3, title: 'Teoría de la Autodeterminación y Motivación', description: 'Profundiza en los mecanismos motivacionales que impulsan el comportamiento humano en educación, deporte y salud.' },
+  { id: 4, title: 'Desarrollo del Autoconcepto y Habilidades Socioemocionales', description: 'Estudia cómo las personas construyen su identidad y desarrollan competencias para enfrentar desafíos.' },
+  { id: 5, title: 'Psicología Educativa y Entornos de Aprendizaje', description: 'Analiza los procesos de enseñanza-aprendizaje y cómo optimizar contextos educativos.' },
+  { id: 6, title: 'Recursos Didácticos en el Área de la Actividad Física', description: 'Investiga metodologías y herramientas innovadoras para la enseñanza de la educación física.' },
+  { id: 7, title: 'Bienestar y Comportamiento Saludable en Ed. Física', description: 'Explora cómo la educación física escolar puede promover bienestar integral en niños y adolescentes.' },
+  { id: 8, title: 'Psico-Sociología de la Adherencia a la Actividad Física', description: 'Estudia los factores psicológicos y sociales que influyen en la práctica sostenida de actividad física.' },
+  { id: 9, title: 'Ejercicio Físico como Herramienta de Inclusión', description: 'Investiga cómo el ejercicio puede promover inclusión social y mejorar la salud en poblaciones diversas.' }
 ];
 
 export const COMPETENCIES: Competency[] = [
@@ -174,7 +172,7 @@ export const COMPETENCIES: Competency[] = [
 export const STATS: Stat[] = [
   { value: '6', label: 'Semestres', subtext: '3 años de duración' },
   { value: '100%', label: 'En Línea', subtext: 'Reuniones cada 15 días' },
-  { value: '30', label: 'Espacios Curriculares', subtext: 'Totalmente prácticos' },
+  { value: '15', label: 'Cursos Taller', subtext: 'Totalmente prácticos' },
   { value: '9', label: 'Áreas', subtext: 'De especialización' }
 ];
 
