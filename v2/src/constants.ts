@@ -26,7 +26,7 @@ export const PILLARS: Pillar[] = [
   {
     id: 2,
     title: 'Cursos-Taller de Metodología de Investigación',
-    description: '15 cursos-taller prácticos distribuidos en 6 semestres.',
+    description: '16 cursos-taller prácticos distribuidos en 6 semestres.',
     whatIsIt: 'Una secuencia progresiva diseñada para que apliques inmediatamente lo aprendido en tu proyecto doctoral usando datos reales.',
     benefits: [
       'Dominarás técnicas desde lo básico hasta lo más avanzado de manera progresiva',
@@ -89,18 +89,18 @@ export const SEMESTERS: Semester[] = [
       'Redacción de Artículos de Revisión Sistemática I',
       'Estadística Básica Aplicada',
       'Redacción de Artículos Científicos',
-      'Seminario de Tesis I'
+      'Diseño de Cuestionarios de Autorreporte'
     ]
   },
   {
     id: 2,
     title: 'Semestre 2',
     courses: [
-      'Diseño de Cuestionarios de Autorreporte',
+      'Validez de Contenido en Investigación Cuantitativa',
       'Redacción de Artículos de Revisión Sistemática II',
       'Análisis Factorial Confirmatorio',
       'Regresión Lineal',
-      'Seminario de Tesis II'
+      'Seminario de Tesis I'
     ]
   },
   {
@@ -110,7 +110,7 @@ export const SEMESTERS: Semester[] = [
       'Redacción de Artículos de Meta-análisis I',
       'Modelos de Ecuaciones Estructurales I',
       'Seminario de Formación Específica I',
-      'Seminario de Tesis III',
+      'Seminario de Tesis II',
       'COLOQUIO DE INVESTIGACIÓN I'
     ]
   },
@@ -121,7 +121,7 @@ export const SEMESTERS: Semester[] = [
       'Redacción de Artículos de Meta-análisis II',
       'Modelos de Ecuaciones Estructurales II',
       'Seminario de Formación Específica II',
-      'Seminario de Tesis IV',
+      'Seminario de Tesis III',
       'COLOQUIO DE INVESTIGACIÓN II'
     ]
   },
@@ -132,7 +132,7 @@ export const SEMESTERS: Semester[] = [
       'Diseños de Caso Único I',
       'Regresión Logística',
       'Seminario de Formación Específica III',
-      'Seminario de Tesis V',
+      'Seminario de Tesis IV',
       'COLOQUIO DE INVESTIGACIÓN III'
     ]
   },
@@ -143,7 +143,7 @@ export const SEMESTERS: Semester[] = [
       'Diseños de Caso Único II',
       'Taller de Titulación',
       'Seminario de Formación Específica IV',
-      'Seminario de Tesis VI',
+      'Seminario de Tesis V',
       'COLOQUIO DE INVESTIGACIÓN IV'
     ]
   }

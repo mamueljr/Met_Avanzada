@@ -37,7 +37,10 @@ const Pillars: React.FC = () => {
                         
                         {/* Content */}
                         <div className="relative flex-1 bg-white p-8 rounded-2xl shadow-sm hover:shadow-lg transition-shadow border border-gray-100 glow-border hover-lift">
-                            <h4 className="text-lg font-bold text-indigo-600 mb-3 uppercase tracking-wider text-sm">¿Qué son?</h4>
+                            {/*<h4 className="text-lg font-bold text-indigo-600 mb-3 uppercase tracking-wider text-sm">¿Qué es?</h4>*/}
+                            <h4 className="text-lg font-bold text-indigo-600 mb-3 uppercase tracking-wider text-sm">
+  {pillar.id === 3 ? '¿Qué es?' : '¿Qué son?'}
+</h4>
                             <p className="text-gray-700 mb-6 text-lg leading-relaxed">
                                 {pillar.whatIsIt}
                             </p>

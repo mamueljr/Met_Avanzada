@@ -4,8 +4,8 @@ import RevealOnScroll from './RevealOnScroll';
 
 const CURRICULUM_HIGHLIGHTS = [
   { value: 4, label: 'Seminarios de Formación Específica', subtext: 'Especialización temática' },
-  { value: 7, label: 'Seminarios de Tesis y Taller', subtext: 'Desarrollo del proyecto' },
-  { value: 15, label: 'Cursos-Taller de Metodología', subtext: 'Competencias técnicas' },
+  { value: 6, label: 'Seminarios de Tesis y Taller', subtext: 'Desarrollo del proyecto' },
+  { value: 16, label: 'Cursos-Taller de Metodología', subtext: 'Competencias técnicas' },
   { value: 4, label: 'Coloquios de Investigación', subtext: 'Difusión y retroalimentación' }
 ];
 
