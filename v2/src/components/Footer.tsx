@@ -13,9 +13,9 @@ const Footer: React.FC = () => {
            <p className="text-lg text-white/80 mb-10 leading-relaxed font-light">
             Este programa doctoral está diseñado para formar investigadores de excelencia que contribuyan significativamente al avance del conocimiento en Ciencias Sociales, Humanidades, Educación y Salud.
            </p>
-           <button className="bg-uach-gold text-uach-purple font-bold py-4 px-12 rounded-full text-lg hover:bg-white transition-all shadow-lg hover:scale-105">
+           {/*<button className="bg-uach-gold text-uach-purple font-bold py-4 px-12 rounded-full text-lg hover:bg-white transition-all shadow-lg hover:scale-105">
              Solicitar Información
-           </button>
+           </button>*/}
         </div>
       </div>
 
