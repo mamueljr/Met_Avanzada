@@ -1,21 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { HERO_CONTENT } from '../constants';
 import RevealOnScroll from './RevealOnScroll';
 import heroBg from '../assets/hero-bg.jpg';
 import logoUach from '../assets/logo-uach.png';
 import logoFccf from '../assets/logo-fccf.png';
+import { useThrottledScroll } from './useThrottledScroll';
 
 const Hero: React.FC = () => {
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const scrollY = useThrottledScroll(10);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-uach-purple overflow-hidden pb-32">
@@ -27,9 +19,9 @@ const Hero: React.FC = () => {
         <img 
           src={heroBg} 
           alt="Campus UACH" 
-          className="w-full h-full object-cover opacity-20 mix-blend-overlay scale-110" // scale-110 prevents white gap at bottom when scrolling
+          className="w-full h-full object-cover opacity-30 mix-blend-soft-light scale-110" // Aumentamos opacidad y suavizamos el blend mode
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-uach-purple via-uach-purple/90 to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-br from-uach-purple/80 via-uach-purple/70 to-black/70" />
       </div>
 
       {/* Decorative Particles */}
