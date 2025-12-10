@@ -5,6 +5,7 @@ import { Menu, X, GraduationCap } from 'lucide-react';
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,6 +13,32 @@ const Navbar: React.FC = () => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Track active section
+  useEffect(() => {
+    const sections = NAV_ITEMS.map(item => item.href.substring(1)); // Remove '#'
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(`#${entry.target.id}`);
+          }
+        });
+      },
+      {
+        rootMargin: '-20% 0px -70% 0px',
+        threshold: 0
+      }
+    );
+
+    sections.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -40,11 +67,14 @@ const Navbar: React.FC = () => {
                 <a
                   key={item.label}
                   href={item.href}
-                  className={`text-sm font-medium transition-colors hover:text-uach-gold ${
+                  className={`relative text-sm font-medium transition-colors hover:text-uach-gold ${
                     scrolled ? 'text-gray-700' : 'text-white/90'
-                  }`}
+                  } ${activeSection === item.href ? 'text-uach-gold' : ''}`}
                 >
                   {item.label}
+                  {activeSection === item.href && (
+                    <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-uach-gold rounded-full animate-in slide-in-from-left duration-300" />
+                  )}
                 </a>
               ))}
             </div>
@@ -56,11 +86,6 @@ const Navbar: React.FC = () => {
               onClick={() => setIsOpen(!isOpen)}
               className={`p-2 rounded-md ${scrolled ? 'text-gray-800' : 'text-white'}`}
             >
-              {/* Toggle Button: We keep it simple here, relying on the overlay to close or the menu's internal close button if we add one, 
-                  but for now let's just toggle. Actually, let's make it just Open if closed. 
-                  If open, the menu itself will have a close button or clicking outside closes it. 
-                  Let's keep the toggle logic for the main navbar icon. */
-              }
               <Menu size={24} />
             </button>
           </div>
@@ -94,7 +119,11 @@ const Navbar: React.FC = () => {
                   key={item.label}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="block px-4 py-3 rounded-xl text-base font-medium text-gray-700 hover:text-uach-purple hover:bg-uach-purple/5 transition-all duration-200 transform hover:translate-x-2"
+                  className={`block px-4 py-3 rounded-xl text-base font-medium transition-all duration-200 transform hover:translate-x-2 ${
+                    activeSection === item.href 
+                      ? 'text-uach-purple bg-uach-purple/10 font-bold' 
+                      : 'text-gray-700 hover:text-uach-purple hover:bg-uach-purple/5'
+                  }`}
                   style={{ transitionDelay: `${idx * 50}ms` }}
                 >
                   {item.label}

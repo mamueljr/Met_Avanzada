@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 /* Archivo de estilos globales mínimos. */
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body,
 #root {
@@ -117,7 +121,7 @@ body {
 }
 
 .btn-shine::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
@@ -147,9 +151,9 @@ body {
   padding: 2px;
   background: linear-gradient(
     135deg,
-    #D9AA32, /* uach-gold */
-    #6F42C1, /* uach-purple */
-    #D9AA32
+    #d9aa32,
+    /* uach-gold */ #6f42c1,
+    /* uach-purple */ #d9aa32
   );
   background-size: 200% 200%;
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);

@@ -1,10 +1,38 @@
-import React, { useState } from 'react';
-import { X, ZoomIn } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { X, ZoomIn, ChevronLeft, ChevronRight } from 'lucide-react';
 import RevealOnScroll from './RevealOnScroll';
 import { GALLERY_ITEMS } from '../constants';
 
 const Gallery: React.FC = () => {
-  const [selectedImage, setSelectedImage] = useState<typeof GALLERY_ITEMS[0] | null>(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null);
+
+  const selectedImage = selectedImageIndex !== null ? GALLERY_ITEMS[selectedImageIndex] : null;
+
+  const handlePrevious = () => {
+    if (selectedImageIndex !== null) {
+      setSelectedImageIndex((selectedImageIndex - 1 + GALLERY_ITEMS.length) % GALLERY_ITEMS.length);
+    }
+  };
+
+  const handleNext = () => {
+    if (selectedImageIndex !== null) {
+      setSelectedImageIndex((selectedImageIndex + 1) % GALLERY_ITEMS.length);
+    }
+  };
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (selectedImageIndex === null) return;
+      
+      if (e.key === 'ArrowLeft') handlePrevious();
+      if (e.key === 'ArrowRight') handleNext();
+      if (e.key === 'Escape') setSelectedImageIndex(null);
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedImageIndex]);
 
   return (
     <section id="gallery" className="py-20 lg:py-28 bg-gray-900 text-white relative">
@@ -23,7 +51,7 @@ const Gallery: React.FC = () => {
             <RevealOnScroll key={item.id} delay={index * 0.1}>
               <div 
                 className="bg-gray-800 rounded-lg overflow-hidden shadow-lg group cursor-pointer relative"
-                onClick={() => setSelectedImage(item)}
+                onClick={() => setSelectedImageIndex(index)}
               >
                 <div className="relative overflow-hidden">
                   <img 
@@ -50,13 +78,41 @@ const Gallery: React.FC = () => {
       {selectedImage && (
         <div 
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 animate-in fade-in duration-200"
-          onClick={() => setSelectedImage(null)}
+          onClick={() => setSelectedImageIndex(null)}
         >
+          {/* Close Button */}
           <button 
             className="absolute top-4 right-4 text-white hover:text-uach-gold transition-colors z-[60]"
-            onClick={() => setSelectedImage(null)}
+            onClick={() => setSelectedImageIndex(null)}
           >
             <X size={32} />
+          </button>
+
+          {/* Counter */}
+          <div className="absolute top-4 left-4 text-white bg-black/50 px-4 py-2 rounded-full text-sm font-medium z-[60]">
+            {selectedImageIndex !== null && `${selectedImageIndex + 1} / ${GALLERY_ITEMS.length}`}
+          </div>
+
+          {/* Previous Button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              handlePrevious();
+            }}
+            className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-uach-gold transition-colors z-[60] bg-black/30 hover:bg-black/50 rounded-full p-3"
+          >
+            <ChevronLeft size={32} />
+          </button>
+
+          {/* Next Button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              handleNext();
+            }}
+            className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-uach-gold transition-colors z-[60] bg-black/30 hover:bg-black/50 rounded-full p-3"
+          >
+            <ChevronRight size={32} />
           </button>
           
           <div 

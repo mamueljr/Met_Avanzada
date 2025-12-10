@@ -1,6 +1,7 @@
 import React from 'react';
 import { HERO_CONTENT } from '../constants';
 import RevealOnScroll from './RevealOnScroll';
+import { useTypingEffect } from './useTypingEffect';
 import heroBg from '../assets/hero-bg.jpg';
 import logoUach from '../assets/logo-uach.png';
 import logoFccf from '../assets/logo-fccf.png';
@@ -8,6 +9,11 @@ import { useThrottledScroll } from './useThrottledScroll';
 
 const Hero: React.FC = () => {
   const scrollY = useThrottledScroll(10);
+  const { displayedText, isComplete } = useTypingEffect({ 
+    text: HERO_CONTENT.title.highlight, 
+    speed: 80,
+    startDelay: 800 
+  });
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-uach-purple overflow-hidden pb-32">
@@ -46,7 +52,10 @@ const Hero: React.FC = () => {
         <RevealOnScroll delay={0.2}>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 leading-tight">
             {HERO_CONTENT.title.prefix} <br/>
-            <span className="text-uach-gold">{HERO_CONTENT.title.highlight}</span> <br/>
+            <span className="text-uach-gold">
+              {displayedText}
+              {!isComplete && <span className="animate-pulse">|</span>}
+            </span> <br/>
             {HERO_CONTENT.title.suffix}
           </h1>
         </RevealOnScroll>
