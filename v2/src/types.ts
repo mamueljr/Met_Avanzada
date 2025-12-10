@@ -34,3 +34,11 @@ export interface Stat {
   label: string;
   subtext?: string;
 }
+
+export interface GalleryItem {
+  id: number;
+  src: string;
+  alt: string;
+  title: string;
+  description: string;
+}

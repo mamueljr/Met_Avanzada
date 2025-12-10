@@ -1,4 +1,9 @@
-import { NavItem, Pillar, Semester, Specialization, Competency, Stat } from './types';
+import { NavItem, Pillar, Semester, Specialization, Competency, Stat, GalleryItem } from './types';
+
+// Images
+import imgAlberca from './assets/fccf-alberca.jpg';
+import imgExplanada from './assets/fccf-explanada.jpg';
+import imgGym from './assets/fccf-gym.jpg';
 
 export const NAV_ITEMS: NavItem[] = [
   { label: '¿Qué es?', href: '#que-es' },
@@ -202,3 +207,27 @@ export const HERO_CONTENT = {
   faculty: 'Facultad de Ciencias de la Cultura Física',
   cta: 'Conocer el Programa'
 };
+
+export const GALLERY_ITEMS: GalleryItem[] = [
+  {
+    id: 1,
+    src: imgExplanada,
+    alt: 'Mural en la explanada de la FCCF',
+    title: 'Explanada Principal',
+    description: 'El corazón de la facultad, adornado con un mural vibrante que representa la cultura y el deporte.'
+  },
+  {
+    id: 2,
+    src: imgGym,
+    alt: 'Gimnasio de la FCCF',
+    title: 'Gimnasio',
+    description: 'Instalaciones equipadas para el desarrollo físico y la práctica de diversas disciplinas deportivas.'
+  },
+  {
+    id: 3,
+    src: imgAlberca,
+    alt: 'Alberca olímpica de la FCCF',
+    title: 'Alberca Olímpica',
+    description: 'Una alberca de primer nivel para la natación y actividades acuáticas.'
+  }
+];
