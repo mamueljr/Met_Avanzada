@@ -2,6 +2,25 @@ import React from 'react';
 import { PILLARS } from '../constants';
 import { CheckCircle } from 'lucide-react';
 import RevealOnScroll from './RevealOnScroll';
+import { useTiltEffect } from './useTiltEffect';
+
+const PillarCard: React.FC<{ pillar: typeof PILLARS[0] }> = ({ pillar }) => {
+  const tiltRef = useTiltEffect(8);
+
+  return (
+    <div className="relative w-full max-w-sm">
+      <div className="absolute inset-0 bg-uach-purple/5 transform rotate-6 rounded-3xl"></div>
+      <div 
+        ref={tiltRef}
+        className="relative bg-white p-12 rounded-3xl shadow-xl border border-gray-100 flex flex-col items-center justify-center h-full text-center min-h-[250px] w-full hover-lift glow-border transition-transform duration-200"
+        style={{ transformStyle: 'preserve-3d' }}
+      >
+        <span className="text-8xl font-bold text-uach-gold/20 absolute top-4 left-6">0{pillar.id}</span>
+        <h3 className="text-2xl font-bold text-uach-purple relative z-10">{pillar.title}</h3>
+      </div>
+    </div>
+  );
+};
 
 const Pillars: React.FC = () => {
   return (
@@ -26,13 +45,7 @@ const Pillars: React.FC = () => {
                     >
                         {/* Visual / Number */}
                         <div className="flex-shrink-0 w-full md:w-1/3 flex justify-center">
-                            <div className="relative w-full max-w-sm">
-                                 <div className="absolute inset-0 bg-uach-purple/5 transform rotate-6 rounded-3xl"></div>
-                                 <div className="relative bg-white p-12 rounded-3xl shadow-xl border border-gray-100 flex flex-col items-center justify-center h-full text-center min-h-[250px] w-full hover-lift glow-border">
-                                    <span className="text-8xl font-bold text-uach-gold/20 absolute top-4 left-6">0{pillar.id}</span>
-                                    <h3 className="text-2xl font-bold text-uach-purple relative z-10">{pillar.title}</h3>
-                                 </div>
-                            </div>
+                            <PillarCard pillar={pillar} />
                         </div>
                         
                         {/* Content */}

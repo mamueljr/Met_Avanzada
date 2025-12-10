@@ -17,12 +17,12 @@ const Competencies: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:items-center">
             <div className="hidden md:block rounded-2xl overflow-hidden shadow-xl fade-in-up h-[600px]" style={{ animationDelay: '0.1s' }}>
-                 <img 
-                    src={competenciesImg} 
-                    alt="Investigación" 
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                 />
+                <img 
+                  src={competenciesImg} 
+                  alt="Investigación" 
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
             </div>
             <div className="space-y-6">
                 {COMPETENCIES.map((comp, idx) => (

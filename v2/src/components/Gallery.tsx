@@ -50,7 +50,7 @@ const Gallery: React.FC = () => {
           {GALLERY_ITEMS.map((item, index) => (
             <RevealOnScroll key={item.id} delay={index * 0.1}>
               <div 
-                className="bg-gray-800 rounded-lg overflow-hidden shadow-lg group cursor-pointer relative"
+                className="bg-gray-800 rounded-lg overflow-hidden shadow-lg group cursor-pointer relative transform transition-transform duration-300 hover:scale-105"
                 onClick={() => setSelectedImageIndex(index)}
               >
                 <div className="relative overflow-hidden">

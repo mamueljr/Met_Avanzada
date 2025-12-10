@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./components/Navbar";
+import ScrollProgressBar from "./components/ScrollProgressBar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Pillars from "./components/Pillars";
@@ -14,6 +15,7 @@ import Footer from "./components/Footer";
 const App: React.FC = () => {
   return (
     <div className="min-h-screen w-full overflow-x-hidden">
+      <ScrollProgressBar />
       <Navbar />
       <main>
         <Hero />
