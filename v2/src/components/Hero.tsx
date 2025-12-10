@@ -35,6 +35,10 @@ const Hero: React.FC = () => {
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-uach-gold/10 rounded-full blur-3xl float-slow" style={{ animationDelay: '0s' }}></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl float-slow" style={{ animationDelay: '2s' }}></div>
         <div className="absolute top-1/2 left-1/2 w-48 h-48 bg-white/5 rounded-full blur-2xl float-slow" style={{ animationDelay: '4s' }}></div>
+        {/* Additional particles for more depth */}
+        <div className="absolute top-[10%] right-[15%] w-32 h-32 bg-uach-gold/5 rounded-full blur-2xl float-slow" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-[15%] left-[10%] w-40 h-40 bg-purple-400/8 rounded-full blur-2xl float-slow" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute top-[60%] right-[30%] w-24 h-24 bg-white/3 rounded-full blur-xl float-slow" style={{ animationDelay: '5s' }}></div>
       </div>
 
       <div className="relative z-10 container mx-auto px-4 text-center text-white mt-20 md:mt-28">
@@ -77,7 +81,7 @@ const Hero: React.FC = () => {
           <div className="mt-12">
             <a 
               href="#que-es" 
-              className="inline-block bg-uach-gold text-uach-purple font-bold py-4 px-10 rounded-full hover:bg-white hover:text-uach-purple transition-all duration-300 shadow-lg transform hover:-translate-y-1 ring-2 ring-transparent hover:ring-uach-gold/70 focus-visible:ring-uach-gold/80 btn-shine"
+              className="inline-block bg-uach-gold text-uach-purple font-bold py-4 px-10 rounded-full hover:bg-white hover:text-uach-purple transition-all duration-300 shadow-lg transform hover:-translate-y-1 ring-2 ring-transparent hover:ring-uach-gold/70 focus-visible:ring-uach-gold/80 btn-shine btn-ripple"
             >
               {HERO_CONTENT.cta}
             </a>

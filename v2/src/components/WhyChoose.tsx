@@ -60,21 +60,21 @@ const WhyChoose: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-             <div className="text-center p-8 border border-gray-100 rounded-2xl shadow-lg">
+             <div className="text-center p-8 border border-gray-100 rounded-2xl shadow-lg hover-lift glow-border">
                 <div className="w-16 h-16 mx-auto bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-6">
                    <MapPin size={32}/>
                 </div>
                 <h4 className="text-xl font-bold mb-4">Nivel Local</h4>
                 <p className="text-gray-600">Generarás evidencia relevante para tu comunidad y región, informando políticas públicas y prácticas profesionales locales.</p>
              </div>
-             <div className="text-center p-8 border border-gray-100 rounded-2xl shadow-lg transform md:-translate-y-4 bg-white z-10">
+             <div className="text-center p-8 border border-gray-100 rounded-2xl shadow-lg transform md:-translate-y-4 bg-white z-10 hover-lift glow-border pulse-on-hover">
                 <div className="w-16 h-16 mx-auto bg-uach-gold/20 text-uach-gold rounded-full flex items-center justify-center mb-6">
                    <Award size={32}/>
                 </div>
                 <h4 className="text-xl font-bold mb-4">Nivel Nacional</h4>
                 <p className="text-gray-600">Contribuirás al avance científico de México, fortaleciendo la investigación en ciencias sociales, humanidades, educación y salud.</p>
              </div>
-             <div className="text-center p-8 border border-gray-100 rounded-2xl shadow-lg">
+             <div className="text-center p-8 border border-gray-100 rounded-2xl shadow-lg hover-lift glow-border">
                 <div className="w-16 h-16 mx-auto bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-6">
                    <Globe size={32}/>
                 </div>

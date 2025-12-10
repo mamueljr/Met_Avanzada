@@ -35,7 +35,7 @@ const Curriculum: React.FC = () => {
 
         <div className="relative">
           {/* Vertical Line: left on small screens, centered on md+ */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-white/20 transform md:-translate-x-1/2 rounded-full"></div>
+          <div className="absolute left-4 md:left-1/2 top-0 w-1 bg-white/20 transform md:-translate-x-1/2 rounded-full timeline-line" style={{ height: '100%' }}></div>
 
             <div className="space-y-12">
                 {SEMESTERS.map((sem, index) => (
