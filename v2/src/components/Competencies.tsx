@@ -1,6 +1,6 @@
 import React from 'react';
 import { COMPETENCIES } from '../constants';
-import competenciesImg from '../assets/competencies.webp';
+import competenciesImg from '../assets/entrada.jpg';
 
 const Competencies: React.FC = () => {
   return (
@@ -16,11 +16,11 @@ const Competencies: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:items-center">
-            <div className="hidden md:block rounded-2xl overflow-hidden shadow-xl fade-in-up" style={{ animationDelay: '0.1s' }}>
+            <div className="hidden md:block rounded-2xl overflow-hidden shadow-xl fade-in-up h-[600px]" style={{ animationDelay: '0.1s' }}>
                  <img 
                     src={competenciesImg} 
                     alt="Investigación" 
-                    className="w-full h-auto object-cover"
+                    className="w-full h-full object-cover"
                     loading="lazy"
                  />
             </div>

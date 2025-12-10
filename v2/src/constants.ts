@@ -12,6 +12,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'Áreas', href: '#areas' },
   { label: 'Competencias', href: '#competencias' },
   { label: 'Características', href: '#caracteristicas' },
+  { label: 'Instalaciones', href: '#gallery' },
   { label: '¿Por qué?', href: '#por-que' },
 ];
 
