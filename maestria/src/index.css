@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Archivo de estilos globales mínimos. */
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Puedes añadir estilos globales adicionales aquí. */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes floatSlow {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Old animations removed in favor of RevealOnScroll component */
+
+.float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.hover-lift {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+}
+
+/* Old glow-border removed */
+
+.halo-gold {
+  position: relative;
+  isolation: isolate;
+  border-color: rgba(234, 179, 8, 0.35) !important;
+  box-shadow: 0 0 12px rgba(234, 179, 8, 0.28), 0 0 24px rgba(234, 179, 8, 0.18);
+}
+
+.halo-gold::after {
+  content: "";
+  position: absolute;
+  inset: var(--halo-inset, -4px);
+  border-radius: inherit;
+  background: radial-gradient(
+    circle,
+    rgba(255, 215, 96, 0.35) 0%,
+    rgba(255, 215, 96, 0) 65%
+  );
+  filter: blur(6px);
+  opacity: 0.9;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.halo-gold-tight {
+  position: relative;
+  isolation: isolate;
+  box-shadow: 0 0 18px rgba(234, 179, 8, 0.4), 0 0 32px rgba(234, 179, 8, 0.18);
+}
+
+.halo-gold-tight::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle,
+    rgba(255, 215, 96, 0.45) 0%,
+    rgba(255, 215, 96, 0) 70%
+  );
+  filter: blur(10px);
+  opacity: 0.95;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Button Shine Effect */
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: left 0.75s;
+}
+
+.btn-shine:hover::after {
+  left: 200%;
+  transition: left 0.75s ease-in-out;
+}
+
+/* Enhanced Glow Border */
+.glow-border::before {
+  content: "";
+  position: absolute;
+  inset: -2px; /* Thicker border */
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(
+    135deg,
+    #d9aa32,
+    /* uach-gold */ #6f42c1,
+    /* uach-purple */ #d9aa32
+  );
+  background-size: 200% 200%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease, background-position 0.4s ease;
+}
+
+.glow-border:hover::before {
+  opacity: 1;
+  background-position: 100% 100%; /* Animate gradient on hover */
+}
+
+/* Ripple Effect for Buttons */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ripple::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 60%);
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.btn-ripple:active::after {
+  animation: ripple 0.6s ease-out;
+}
+
+/* Pulse animation for interactive elements */
+@keyframes pulse-gold {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(217, 170, 50, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(217, 170, 50, 0);
+  }
+}
+
+.pulse-on-hover:hover {
+  animation: pulse-gold 1.5s infinite;
+}
+
+/* Timeline Animation */
+@keyframes drawLine {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+.timeline-line {
+  animation: drawLine 2s ease-out forwards;
+}
+
+/* Staggered fade in for timeline items */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.timeline-item {
+  opacity: 0;
+  animation: fadeSlideIn 0.5s ease-out forwards;
+}
