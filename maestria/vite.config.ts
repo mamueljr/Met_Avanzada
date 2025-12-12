@@ -8,7 +8,7 @@ export default defineConfig(({ command }) => {
     plugins: [react()],
     // En desarrollo usamos '/' para que sea fácil.
     // En producción (build) usamos la subcarpeta donde se va a alojar.
-    base: isProd ? '/met_avanzada/v2/' : '/',
+    base: isProd ? '/met_avanzada/maestria/' : '/',
     build: {
       outDir: 'dist',
       assetsDir: 'assets',
