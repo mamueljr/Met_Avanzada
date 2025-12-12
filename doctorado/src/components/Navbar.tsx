@@ -55,7 +55,7 @@ const Navbar: React.FC = () => {
                <GraduationCap size={24} />
              </div>
              <div className="flex flex-col">
-                <span className={`font-bold leading-tight ${scrolled ? 'text-uach-purple' : 'text-white'}`}>Doctorado FCCF</span>
+                <span className={`font-bold leading-tight ${scrolled ? 'text-uach-purple' : 'text-white'}`}>Doctorado MA-FCCF</span>
                 <span className={`text-xs tracking-wider ${scrolled ? 'text-gray-600' : 'text-gray-200'}`}>UACH</span>
              </div>
           </div>
