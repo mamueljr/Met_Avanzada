@@ -3,10 +3,10 @@ import { STATS } from '../constants';
 import RevealOnScroll from './RevealOnScroll';
 
 const CURRICULUM_HIGHLIGHTS = [
-  { value: 2, label: 'Seminarios de Especialización en Área de Investigación Elegida', subtext: 'Especialización temática' },
-  { value: 4, label: 'Seminarios de Proyecto de Tesis y Taller de Redacción y Defensa del Trabajo de Grado', subtext: 'Desarrollo del proyecto' },
-  { value: 7, label: 'Cursos-Taller de Metodología', subtext: 'Competencias técnicas' },
-  { value: 3, label: 'Socialización de Proyectos de Tesis', subtext: 'Difusión y retroalimentación' }
+  { value: 2, label: 'Semestres de Formación Intensiva', subtext: '1 año de duración' },
+  { value: 4, label: 'Espacios Curriculares en el Primer Semestre', subtext: 'Bases y diseño' },
+  { value: 4, label: 'Espacios Curriculares en el Segundo Semestre', subtext: 'Validación y análisis' },
+  { value: 100, label: '% Formación en Línea', subtext: 'Flexibilidad total' }
 ];
 
 interface CountUpNumberProps {
@@ -82,51 +82,51 @@ const Features: React.FC = () => {
 
   return (
     <section id="caracteristicas" className="py-20 bg-uach-dark text-white" ref={sectionRef}>
-       <div className="container mx-auto px-4">
-          <RevealOnScroll>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-                {STATS.map((stat, idx) => {
-                  const { target, suffix } = parseValue(stat.value);
-                  return (
-                    <div key={idx} className="relative p-6 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover-lift glow-border">
-                        <CountUpNumber 
-                          target={target} 
-                          suffix={suffix}
-                          delay={idx * 150}
-                          animate={animateCounters}
-                          className="block text-4xl md:text-5xl font-bold text-uach-gold mb-2"
-                        />
-                        <div className="text-xl font-medium mb-1">{stat.label}</div>
-                        <div className="text-sm text-gray-400">{stat.subtext}</div>
-                    </div>
-                  );
-                })}
+      <div className="container mx-auto px-4">
+        <RevealOnScroll>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+            {STATS.map((stat, idx) => {
+              const { target, suffix } = parseValue(stat.value);
+              return (
+                <div key={idx} className="relative p-6 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 hover-lift glow-border">
+                  <CountUpNumber
+                    target={target}
+                    suffix={suffix}
+                    delay={idx * 150}
+                    animate={animateCounters}
+                    className="block text-4xl md:text-5xl font-bold text-uach-gold mb-2"
+                  />
+                  <div className="text-xl font-medium mb-1">{stat.label}</div>
+                  <div className="text-sm text-gray-400">{stat.subtext}</div>
+                </div>
+              );
+            })}
+          </div>
+        </RevealOnScroll>
+
+        <div className="mt-20 max-w-5xl mx-auto">
+          <RevealOnScroll delay={0.2}>
+            <h3 className="text-2xl font-bold text-center mb-10">Estructura Curricular</h3>
+          </RevealOnScroll>
+          <RevealOnScroll delay={0.3}>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {CURRICULUM_HIGHLIGHTS.map((item, idx) => (
+                <div key={item.label} className="relative bg-white text-gray-900 p-6 rounded-xl shadow-lg text-center hover-lift glow-border">
+                  <CountUpNumber
+                    target={item.value}
+                    duration={1600}
+                    delay={idx * 200}
+                    animate={animateCounters}
+                    className="block text-5xl font-bold text-uach-gold mb-2"
+                  />
+                  <p className="font-medium">{item.label}</p>
+                  <p className="text-xs text-gray-500 mt-2">{item.subtext}</p>
+                </div>
+              ))}
             </div>
           </RevealOnScroll>
-
-          <div className="mt-20 max-w-5xl mx-auto">
-            <RevealOnScroll delay={0.2}>
-              <h3 className="text-2xl font-bold text-center mb-10">Estructura Curricular</h3>
-            </RevealOnScroll>
-            <RevealOnScroll delay={0.3}>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {CURRICULUM_HIGHLIGHTS.map((item, idx) => (
-                    <div key={item.label} className="relative bg-white text-gray-900 p-6 rounded-xl shadow-lg text-center hover-lift glow-border">
-                        <CountUpNumber 
-                          target={item.value}
-                          duration={1600}
-                          delay={idx * 200}
-                          animate={animateCounters}
-                          className="block text-5xl font-bold text-uach-gold mb-2"
-                        />
-                        <p className="font-medium">{item.label}</p>
-                        <p className="text-xs text-gray-500 mt-2">{item.subtext}</p>
-                    </div>
-                  ))}
-              </div>
-            </RevealOnScroll>
-          </div>
-       </div>
+        </div>
+      </div>
     </section>
   );
 };

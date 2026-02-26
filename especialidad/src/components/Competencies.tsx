@@ -11,7 +11,7 @@ const Competencies: React.FC = () => {
             Competencias Metodológicas que Desarrollarás
           </h2>
           <p className="text-gray-600 max-w-4xl mx-auto">
-            Al concluir la especialidad, habrás desarrollado dos aptitudes de investigación esenciales (Aptitudes 1 y 2), además de una tercera aptitud optativa (entre la 3 y la 7), que podrás elegir de acuerdo con tus intereses y trayectoria académica o profesional. El resto de las aptitudes de investigación se profundizarán y completarán durante el Doctorado en Metodología Avanzada para la Investigación en Ciencias Sociales, Humanidades, Educación y Salud, para quienes decidan continuar su formación investigadora en este programa.
+            Al concluir la especialidad, habrás desarrollado competencias fundamentales en el diseño y validación de instrumentos de medición psicométricos, permitiéndote generar datos de alta calidad para la investigación científica y la práctica profesional basada en evidencia.
           </p>
         </div>
 

@@ -54,7 +54,7 @@ const Navbar: React.FC = () => {
               <GraduationCap size={24} />
             </div>
             <div className="flex flex-col">
-              <span className={`font-bold leading-tight ${scrolled ? 'text-uach-purple' : 'text-white'}`}>Especialidad MA-FCCF</span>
+              <span className={`font-bold leading-tight ${scrolled ? 'text-uach-purple' : 'text-white'}`}>Especialidad DVC-FCCF</span>
               <span className={`text-xs tracking-wider ${scrolled ? 'text-gray-600' : 'text-gray-200'}`}>UACH</span>
             </div>
           </div>
@@ -118,8 +118,8 @@ const Navbar: React.FC = () => {
                   href={item.href}
                   onClick={() => setIsOpen(false)}
                   className={`block px-4 py-3 rounded-xl text-base font-medium transition-all duration-200 transform hover:translate-x-2 ${activeSection === item.href
-                      ? 'text-uach-purple bg-uach-purple/10 font-bold'
-                      : 'text-gray-700 hover:text-uach-purple hover:bg-uach-purple/5'
+                    ? 'text-uach-purple bg-uach-purple/10 font-bold'
+                    : 'text-gray-700 hover:text-uach-purple hover:bg-uach-purple/5'
                     }`}
                   style={{ transitionDelay: `${idx * 50}ms` }}
                 >

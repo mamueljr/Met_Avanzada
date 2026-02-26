@@ -8,10 +8,10 @@ const Footer: React.FC = () => {
         <div className="container mx-auto px-4 text-center max-w-4xl">
           <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6">¿Listo para Transformar tu Carrera Investigadora?</h2>
           <p className="text-xl text-indigo-100 mb-8">
-            Únete a la Especialidad en Metodología Avanzada y conviértete en el investigador de excelencia que el mundo necesita.
+            Únete a la Especialidad en Diseño y Validación de Cuestionarios y conviértete en el investigador de excelencia que el mundo necesita.
           </p>
           <p className="text-lg text-white/80 mb-10 leading-relaxed font-light">
-            Este programa de especialidad está diseñado para formar investigadores de excelencia que contribuyan significativamente al avance del conocimiento en Ciencias Sociales, Humanidades, Educación y Salud.
+            Este programa de especialidad está diseñado para formar investigadores de excelencia con competencias técnicas sólidas en la creación de instrumentos de medición para Ciencias Sociales, Humanidades, Educación y Salud.
           </p>
           {/*<button className="bg-uach-gold text-uach-purple font-bold py-4 px-12 rounded-full text-lg hover:bg-white transition-all shadow-lg hover:scale-105">
              Solicitar Información
