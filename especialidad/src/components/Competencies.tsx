@@ -10,9 +10,9 @@ const Competencies: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-uach-purple mb-4">
             Competencias Metodológicas que Desarrollarás
           </h2>
-          <p className="text-gray-600 max-w-4xl mx-auto">
+          {/*  <p className="text-gray-600 max-w-4xl mx-auto">
             Al concluir la especialidad, habrás desarrollado competencias fundamentales en el diseño y validación de instrumentos de medición psicométricos, permitiéndote generar datos de alta calidad para la investigación científica y la práctica profesional basada en evidencia.
-          </p>
+          </p> */}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:items-center">

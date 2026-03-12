@@ -112,7 +112,7 @@ export const COMPETENCIES: Competency[] = [
 export const STATS: Stat[] = [
   { value: '2', label: 'Semestres', subtext: '1 año de duración' },
   { value: '100%', label: 'En Línea', subtext: 'Reuniones cada 15 días' },
-  { value: '8', label: 'Espacios Curriculares', subtext: 'Totalmente prácticos' },
+  { value: '7', label: 'Espacios Curriculares', subtext: 'Totalmente prácticos' },
   { value: '9', label: 'Áreas', subtext: 'De especialización' }
 ];
 

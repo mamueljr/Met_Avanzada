@@ -104,7 +104,7 @@ const Features: React.FC = () => {
           </div>
         </RevealOnScroll>
 
-        <div className="mt-20 max-w-5xl mx-auto">
+        {/* <div className="mt-20 max-w-5xl mx-auto">
           <RevealOnScroll delay={0.2}>
             <h3 className="text-2xl font-bold text-center mb-10">Estructura Curricular</h3>
           </RevealOnScroll>
@@ -125,7 +125,7 @@ const Features: React.FC = () => {
               ))}
             </div>
           </RevealOnScroll>
-        </div>
+        </div> */}
       </div>
     </section>
   );
